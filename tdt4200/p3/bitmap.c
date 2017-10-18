@@ -43,7 +43,7 @@ void colorize(uchar* p, cell my_cell) {
   }
 }
 
-void make_bmp(cell* image, int index){
+void make_bmp(cell* image, char* out){
 
   // create nice image from iteration counts. take care to create it upside
   // down (bmp format)
@@ -58,7 +58,7 @@ void make_bmp(cell* image, int index){
   }
 
   char filename [50];
-  sprintf(filename, "data/CA-%d.bmp", index);
+  sprintf(filename, "%s.bmp", out);
   /* write image to disk */
   savebmp(filename,buffer,IMG_X,IMG_Y);
 }
